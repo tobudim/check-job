@@ -8,10 +8,10 @@ Renseignez `/config.json` suivant vos préférences.
 
 ```json
 {
-  job: "Développeur front-end",
-  city: "Bordeaux",
-  city-radius: "40",
-  update-time: "15"
+  "job": "Développeur front-end",
+  "city": "Bordeaux",
+  "city-radius": "40",
+  "update-time": "15"
 }
 ```
 
