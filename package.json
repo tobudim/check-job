@@ -1,0 +1,45 @@
+{
+  "name": "check-job",
+  "version": "1.0.0",
+  "description": "Surveille les offres d'emploi de `Monster`, `Indeed` et `Pôle Emploi` et notifie si de nouvelles sont créées ! 😎",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "lint": "eslint . --fix",
+    "format": "prettier --write '**/*.{js, json}",
+    "test": "./node_modules/.bin/nyc -R spec --reporter=lcov --exclude '**/*.spec.js' ./node_modules/.bin/_mocha './{,!(node_modules)/**}/*.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobudim/check-job.git"
+  },
+  "keywords": [
+    "job",
+    "pole emploi",
+    "monster",
+    "indeed"
+  ],
+  "author": "tobudim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tobudim/check-job/issues"
+  },
+  "homepage": "https://github.com/tobudim/check-job#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codecov": "^3.7.2",
+    "dirty-chai": "^2.0.1",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "prettier": "^2.1.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "node-fetch": "^2.6.1",
+    "ora": "^5.1.0"
+  }
+}

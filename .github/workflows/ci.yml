@@ -1,0 +1,25 @@
+name: CI Script
+
+on: [push]
+
+jobs:
+  build:
+    name: Preparation, Linting & Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: use Node.js v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: npm install
+        run: |
+          npm ci
+      - name: run lint
+        run: |
+          npm install -g eslint
+          npm run lint
+      - name: run tests
+        run: |
+          npm test
