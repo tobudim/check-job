@@ -6,8 +6,7 @@
   },
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "rules": {
-    "eqeqeq": "off",
-    "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+    "eqeqeq": "off"
   },
   "plugins": ["prettier"]
 }
