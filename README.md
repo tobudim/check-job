@@ -1,5 +1,7 @@
 # check-job
 
+![CI Script](https://github.com/tobudim/check-job/workflows/CI%20Script/badge.svg)
+
 Surveille les offres d'emploi de `Monster`, `Indeed` et `Pôle Emploi` et notifie si de nouvelles sont créées ! 😎
 
 # Configuration
