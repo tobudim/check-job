@@ -5,7 +5,7 @@
     "es6": true
   },
   "plugins": ["prettier"],
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["plugin:prettier/recommended"],
   "rules": {
     "eqeqeq": "off",
     "prettier/prettier": "error"
