@@ -4,6 +4,7 @@
     "commonjs": true,
     "es6": true
   },
+  "parserOptions": { "ecmaVersion": 10 },
   "plugins": ["prettier"],
   "extends": ["plugin:prettier/recommended"],
   "rules": {
