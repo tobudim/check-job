@@ -1,4 +1,5 @@
 const { confirmConfig } = require("./scripts/configuration");
+const { getSavedJobs } = require("./scripts/jobs");
 
 const urls = {
   monster: "https://monster.fr",
@@ -7,3 +8,4 @@ const urls = {
 };
 
 const config = confirmConfig();
+const jobs = getSavedJobs(config);
