@@ -4,7 +4,7 @@ const { checkConfig } = require("./configuration/checkConfig");
 let config = require(path.join(__dirname, "..", "config.json"));
 
 /**
- * returns Configuration Object after some checks and editing if necessary
+ * Return config object after checkups and editing if necessary
  */
 function confirmConfig() {
   const configStatus = checkConfig(config);
