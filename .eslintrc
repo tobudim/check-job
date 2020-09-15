@@ -4,9 +4,10 @@
     "commonjs": true,
     "es6": true
   },
+  "plugins": ["prettier"],
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "rules": {
-    "eqeqeq": "off"
-  },
-  "plugins": ["prettier"]
+    "eqeqeq": "off",
+    "prettier/prettier": "error"
+  }
 }
