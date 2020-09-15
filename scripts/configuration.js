@@ -9,6 +9,7 @@ let config = require(path.join(__dirname, "..", "config.json"));
 function confirmConfig() {
   const configStatus = checkConfig(config);
   if (!configStatus) return console.error("Éditez le fichier config.json !");
+  return config;
 }
 
 module.exports = { confirmConfig };
