@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const { getJobsFromWebsites } = require("./jobs/getNewJobs");
+
 const jobsDir = path.join(__dirname, "..", "jobs");
 
 /**
@@ -25,4 +27,16 @@ function getSavedJobs({ job, city, cityRadius }) {
   });
 }
 
-module.exports = { getSavedJobs };
+/**
+ * Promise - Check online for new jobs and return result as object
+ * @param {obejct} config {job, city, cityRadius, updateTime}
+ * @param {object} savedJobs { website: string, jobs: object | null }
+ */
+async function checkNewJobs(config, savedJobs) {
+  return new Promise((resolve, reject) => {
+    const newJobs = getJobsFromWebsites(config);
+    return resolve(newJobs);
+  });
+}
+
+module.exports = { getSavedJobs, checkNewJobs };

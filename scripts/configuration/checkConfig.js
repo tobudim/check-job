@@ -1,5 +1,9 @@
 const keys = ["job", "city", "cityRadius", "updateTime"];
 
+/**
+ * Verify config file and returns a bool
+ * @param {object} config object
+ */
 function checkConfig(config) {
   if (typeof config !== "object") return false;
   if (Object.keys(config).length !== 4) return false;

@@ -1,11 +1,26 @@
-const { confirmConfig } = require("./scripts/configuration");
-const { getSavedJobs } = require("./scripts/jobs");
+const ora = require("ora");
 
-const urls = {
-  monster: "https://monster.fr",
-  indeed: "https://indeed.fr",
-  poleEmploi: "https://pole-emploi.fr",
-};
+const { confirmConfig } = require("./scripts/configuration");
+const { getCurrentTime } = require("./lib/time");
+const { getSavedJobs, checkNewJobs } = require("./scripts/jobs");
 
 const config = confirmConfig();
-const jobs = getSavedJobs(config);
+const savedJobs = getSavedJobs(config);
+
+setInterval(function appGlobalInterval() {
+  const loadingSpinner = ora("Configuration vérifiée").start();
+  loadingSpinner.color = "blue";
+  loadingSpinner.text = "Recherche des nouvelles offres d'emploi...";
+
+  checkNewJobs(config, savedJobs)
+    .then((newJobs) => {
+      const time = getCurrentTime();
+      if (!newJobs)
+        return loadingSpinner.info(
+          `${time} : Sites vérifiés, rien de nouveau. 😊`
+        );
+      loadingSpinner.succeed("De nouvelles offres sont disponibles ! 😎");
+      return notifyUser(newJobs);
+    })
+    .catch((error) => loadingSpinner.fail(new Error(error)));
+}, config.updateTime * 1000);
