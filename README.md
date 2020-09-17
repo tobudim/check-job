@@ -4,6 +4,8 @@
 
 Surveille les offres d'emploi de `Monster`, `Indeed` et `Pôle Emploi` et notifie si de nouvelles sont créées ! 😎
 
+> Travail en cours, publié pour les yeux des recruteurs. 🤫
+
 # Configuration
 
 Renseignez `/config.json` suivant vos préférences.
