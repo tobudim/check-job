@@ -19,6 +19,8 @@ Renseignez `/config.json` suivant vos préférences.
 }
 ```
 
+`city` doit être une ville (pas un pays ou une région).
+
 `city-radius` concerne la zone autour de la ville renseignée à inclure dans les recherches, en kilomètres.
 
 `update-time` concerne la durée à attendre avant de mettre à jour les recherches, en minutes.
