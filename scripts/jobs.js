@@ -33,9 +33,13 @@ function getSavedJobs({ job, city, cityRadius }) {
  * @param {object} savedJobs { website: string, jobs: object | null }
  */
 async function checkNewJobs(config, savedJobs) {
-  return new Promise((resolve, reject) => {
-    const newJobs = getJobsFromWebsites(config);
-    return resolve(newJobs);
+  return new Promise(async (resolve, reject) => {
+    try {
+      const newJobs = await getJobsFromWebsites(config);
+      // return resolve(newJobs);
+    } catch (error) {
+      return reject(error);
+    }
   });
 }
 
