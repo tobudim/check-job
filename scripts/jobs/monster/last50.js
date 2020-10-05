@@ -1,6 +1,4 @@
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-
+const puppeteer = require("puppeteer");
 function getLast50JobsFromMonster(body) {
   // const $ = cheerio.load(body);
   // $("#loadMoreJobs").click();
